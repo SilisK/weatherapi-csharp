@@ -15,17 +15,18 @@
 </div>
 
 ```json
-Location => {
+{
     "id": "",
     "city": "",
     "state": "",
-    "forecast": {
+    "forecast":
+    {
       "date": "",
       "temperatureC": 0,
       "temperatureF": 0,
       "summary": ""
     }
-  }
+}
 ```
 
 <div>
@@ -33,21 +34,15 @@ Location => {
     <ul>
         <li>
         <b>All locations: </b>
-            <code>
-                http://localhost:{port}/location
-            </code>
+            <code>http://localhost:{port}/location</code>
         </li>
         <li>
         <b>Location by id: </b>
-            <code>
-                http://localhost:{port}/location/{id}
-            </code>
+            <code>http://localhost:{port}/location/{id}</code>
         </li>
         <li>
         <b>Forecast demo: </b>
-            <code>
-                http://localhost:{port}/weatherforecast
-            </code>
+            <code>http://localhost:{port}/weatherforecast</code>
         </li>
     </ul>
 </div>
