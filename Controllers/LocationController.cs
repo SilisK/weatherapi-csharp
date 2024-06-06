@@ -24,4 +24,36 @@ public class LocationController : ControllerBase
 
         return location;
     }
+
+    [HttpPost]
+    public IActionResult Create(Location location)
+    {
+        LocationService.Add(location);
+        return CreatedAtAction(nameof(Get), new { id = location.Id }, location);
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(Guid id, Location location)
+    {
+        if (id != location.Id) return BadRequest();
+
+        var existingLocation = LocationService.Get(id);
+        if (existingLocation is null) return NotFound();
+
+        LocationService.Update(location);
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(Guid id)
+    {
+        var location = LocationService.Get(id);
+
+        if (location is null) return NotFound();
+
+        LocationService.Delete(id);
+
+        return NoContent();
+    }
 }
