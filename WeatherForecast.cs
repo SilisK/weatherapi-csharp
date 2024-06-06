@@ -2,6 +2,8 @@ namespace WeatherAPI_CSharp;
 
 public class WeatherForecast
 {
+    public Guid Id { get; private set; } = Guid.NewGuid();
+
     public DateOnly Date { get; set; }
 
     public int TemperatureC { get; set; }
